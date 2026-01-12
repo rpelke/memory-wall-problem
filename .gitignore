@@ -1,0 +1,11 @@
+# IDE
+.vscode
+
+# Environment
+.venv
+
+# Python
+__pycache__
+
+# Artifacts
+*.png

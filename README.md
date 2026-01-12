@@ -1,2 +1,7 @@
-# memory-wall-problem
-Visualization of the evolution of peak compute and bandwidth in AI chips
+# Memory-Wall Problem
+
+## Development of Peak Compute vs. Memory Bandwidth
+
+<p align="center">
+  <img src="https://rpelke.github.io/memory-wall-problem/memory_wall_problem.png">
+</p>
