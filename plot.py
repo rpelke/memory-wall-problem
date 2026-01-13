@@ -12,22 +12,15 @@ NORM_COLS = [
 ]
 
 # DataFrame columns to plot on the y-axis.
-Y_COLS = [
-    "norm_mem_bw_GBs", "norm_fp32_peak_compute_Gflops",
-    "norm_ai_dtype_peak_compute_Gflops"
-]
+Y_COLS = ["norm_mem_bw_GBs", "norm_fp32_peak_compute_Gflops", "norm_ai_dtype_peak_compute_Gflops"]
 
 # Y-labels for the plots.
 Y_LABELS = [
-    "Normalized Memory Bandwidth (GB/s)",
-    "Normalized FP32 Peak Compute (GFLOPS)", "Normalized Peak Compute (GFLOPS)"
+    "Normalized Memory Bandwidth (GB/s)", "Normalized FP32 Peak Compute (GFLOPS)",
+    "Normalized Peak Compute (GFLOPS)"
 ]
 
-df = pd.read_csv(DC_CHIPS_PATH,
-                 sep=";",
-                 header=0,
-                 decimal=".",
-                 encoding="utf-8")
+df = pd.read_csv(DC_CHIPS_PATH, sep=";", header=0, decimal=".", encoding="utf-8")
 
 
 # Sorts DataFrame by 'date_num' column in ascending order.
