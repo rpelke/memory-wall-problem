@@ -35,6 +35,7 @@ if __name__ == "__main__":
         title_fontsize=14,
         legend_fontsize=14,
         annotation_fontsize=10,
+        ylim=(5 * 10e-2, 3.5 * 10e3),
         text_offsets=0.1
     )
 
@@ -46,7 +47,7 @@ if __name__ == "__main__":
             marker=["D", "o"],
             y_col=["norm_mem_bw_GBs", "norm_fp32_peak_compute_Gflops"],
             y_label=["Memory Bandwidth (GB/s)", "FP32 Peak Compute (GFLOPS)"],
-            marker_color=["firebrick", "royalblue"],
+            marker_color=["mediumseagreen", "royalblue"],
             title="Development of Peak Compute (only FP32) vs. Memory Bandwidth"
         ),
         replace(
@@ -56,7 +57,7 @@ if __name__ == "__main__":
             marker=["D", "v"],
             y_col=["norm_mem_bw_GBs", "norm_ai_dtype_peak_compute_Gflops"],
             y_label=["Memory Bandwidth (GB/s)", "Peak Compute (GFLOPS)"],
-            marker_color=["firebrick", "mediumseagreen"],
+            marker_color=["mediumseagreen", "mediumpurple"],
             title="Development of Peak Compute vs. Memory Bandwidth"
         ),
     ]

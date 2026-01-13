@@ -93,8 +93,10 @@ def plot(
     plt.tick_params(axis="both", which="major", labelsize=settings.tick_fontsize)
     if settings.title != None:
         plt.title(settings.title, fontsize=settings.title_fontsize)
-    plt.legend(fontsize=settings.legend_fontsize)
+    plt.legend(fontsize=settings.legend_fontsize, loc="upper left")
     plt.yscale("log", base=10)
+    if settings.ylim is not None:
+        plt.ylim(*settings.ylim)
     plt.grid(True)
 
     plt.tight_layout()

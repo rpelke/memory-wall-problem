@@ -27,6 +27,7 @@ class PltSettings:
         font_family (str): Font family for the plot.
         regression_line_width (float): Line width for regression lines.
         text_offsets (float): Offsets for text annotations in percentage.
+        ylim (tuple[float, float]): Y-axis limits.
         title (str): Title of the plot.
     """
     dc_chips_path: Path
@@ -44,6 +45,7 @@ class PltSettings:
     font_family: str = "monospace"
     regression_line_width: float = 1.0
     text_offsets: float = 0.15
+    ylim: tuple[float, float] = None
     title: str = None
 
     # Verify that all lists have the same length.
