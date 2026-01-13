@@ -25,9 +25,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Run plot script
+      - name: Run main script to generate plots
         run: |
-          python plot.py
+          python main.py
 
       - name: Publish PNG to gh-pages
         run: |
