@@ -1,5 +1,5 @@
 [style]
-based_on_style = pep8
+based_on_style = facebook
 column_limit = 100
 spaces_before_comment = 4
 split_before_logical_operator = true

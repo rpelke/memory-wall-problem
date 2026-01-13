@@ -19,9 +19,9 @@ files = [
     if f.is_file() and f.suffix == ".py" and all(xcl not in f._str for xcl in exclude)
 ]
 for f in files:
-    r = subprocess.run([formatter, "--diff", ".style.yapf", f"{f._str}"],
-                       capture_output=True,
-                       text=True)
+    r = subprocess.run(
+        [formatter, "--diff", ".style.yapf", f"{f._str}"], capture_output=True, text=True
+    )
 
     if r.stdout:
         print(f"Unformatted Python file: {f}")
