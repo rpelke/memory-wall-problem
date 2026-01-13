@@ -9,8 +9,8 @@ import pandas as pd
 
 
 def preprocess_data(df: pd.DataFrame, settings: PltSettings) -> pd.DataFrame:
-    assert len(settings.norm_col) == len(settings.y_col) == len(settings.y_label
-                                                               ) == len(settings.marker)
+    assert len(settings.raw_data_col) == len(settings.y_col) == len(settings.y_label
+                                                                   ) == len(settings.marker)
     """Preprocesses the original dataframe.
     Sorts columns by date.
     Normalizes columns to their first data point.
@@ -36,5 +36,5 @@ def preprocess_data(df: pd.DataFrame, settings: PltSettings) -> pd.DataFrame:
 
     df = _sort_by_date(df)
     df["date_pd"] = pd.to_datetime(df["date_de"], format="%d.%m.%Y")
-    _normalize_columns(df, settings.norm_col)
+    _normalize_columns(df, settings.raw_data_col)
     return df

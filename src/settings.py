@@ -13,7 +13,8 @@ class PltSettings:
     """Contains all information for one pyplot figure.
     Attributes:
         dc_chips_path (Path): Path to the data file.
-        norm_col (list[str]): Columns to normalize.
+        output_name (str): Name of the output plot file.
+        raw_data_col (list[str]): Columns to normalize.
         y_col (list[str]): Columns to plot on y-axis.
         y_label (list[str]): Labels for y-axis columns.
         marker (list[str]): Markers for each y-column.
@@ -22,11 +23,15 @@ class PltSettings:
         tick_fontsize (int): Font size for tick labels.
         title_fontsize (int): Font size for the plot title.
         legend_fontsize (int): Font size for the legend.
+        annotation_fontsize (int): Font size for point annotations.
         font_family (str): Font family for the plot.
         regression_line_width (float): Line width for regression lines.
+        text_offsets (float): Offsets for text annotations in percentage.
+        title (str): Title of the plot.
     """
     dc_chips_path: Path
-    norm_col: list[str]
+    output_name: str
+    raw_data_col: list[str]
     y_col: list[str]
     y_label: list[str]
     marker: list[str]
@@ -35,8 +40,11 @@ class PltSettings:
     tick_fontsize: int = 10
     title_fontsize: int = 14
     legend_fontsize: int = 12
+    annotation_fontsize: int = 8
     font_family: str = "monospace"
     regression_line_width: float = 1.0
+    text_offsets: float = 0.15
+    title: str = None
 
     # Verify that all lists have the same length.
     def __post_init__(self):

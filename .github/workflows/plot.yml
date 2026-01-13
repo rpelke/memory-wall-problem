@@ -32,7 +32,7 @@ jobs:
       - name: Publish PNG to gh-pages
         run: |
           mkdir -p public
-          cp memory_wall_problem.png public/
+          cp -r *.png public/
           git switch --orphan gh-pages
           git rm -rf . || true
           cp -r public/* .
