@@ -1,36 +1,36 @@
-﻿name;date_de;date_num;mem_type;mem_bw_GBs;fp32_peak_compute_Gflops;ai_dtype_peak_compute_Gflops;dtype;wikipedia;techpowerup;vendor
-Tesla C870;02.05.2007;2007.33;GDDR3;76.8;345.6;345.6;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-c870.c1542;
-FireStream 9170;08.11.2007;2007.85;GDDR3;51.33;497.3;497.3;FP32;https://en.wikipedia.org/wiki/AMD_FireStream;https://www.techpowerup.com/gpu-specs/firestream-9170.c839;
-FireStream 9270;13.11.2008;2008.87;GDDR5;115.2;1200;1200;FP32;https://en.wikipedia.org/wiki/AMD_FireStream;https://www.techpowerup.com/gpu-specs/firestream-9270.c840;
-Tesla C1060;09.04.2009;2009.27;GDDR3;102.4;622.1;622.1;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-c1060.c1539;
-FireStream 9370;23.06.2010;2010.47;GDDR5;147.2;2640;2640;FP32;https://en.wikipedia.org/wiki/AMD_FireStream;https://www.techpowerup.com/gpu-specs/firestream-9370.c1185;
-Tesla M2090;25.06.2011;2011.48;GDDR5;177.4;1332.2;1332.2;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-m2090.c1537;
-Tesla K10;01.05.2012;2012.33;GDDR5;160;2289;2289;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-k10.c918;
-FirePro S9000;24.08.2012;2012.64;GDDR5;264;3226;3226;FP32;https://en.wikipedia.org/wiki/AMD_FirePro;https://www.techpowerup.com/gpu-specs/firepro-s9000.c1879;
-Tesla K20X;12.11.2012;2012.86;GDDR5;249.6;3935;3935;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-k20x.c2315;
-Tesla K40;22.11.2013;2013.89;GDDR5;288.4;5046;5046;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-k40t.c3403;
-FirePro S9150;07.08.2014;2014.6;GDDR5;320;5069;5069;FP32;https://en.wikipedia.org/wiki/AMD_FirePro;https://www.techpowerup.com/gpu-specs/firepro-s9150.c2608;
-FirePro S9170;08.07.2015;2015.52;GDDR5;320;5238;5238;FP32;https://en.wikipedia.org/wiki/AMD_FirePro;https://www.techpowerup.com/gpu-specs/firepro-s9170.c2744;
-Tesla M60;30.08.2015;2015.66;GDDR5;160.4;4825;4825;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-m60.c2760;
-Tesla M40;10.11.2015;2015.86;GDDR5;288.4;6832;6832;FP32;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-m40.c2771;
-Tesla P100 SXM2;05.04.2016;2016.26;HBM2;732.2;10610;21220;FP16;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-p100-sxm2.c3183;
-TPU v2;01.05.2017;2017.33;HBM2;600;;23000;BF16;https://de.wikipedia.org/wiki/Tensor_Processing_Unit;;
-Tesla V100 SXM3 32 GB;27.03.2018;2018.23;HBM2;981;16350;32710;FP16;https://de.wikipedia.org/wiki/Nvidia_Tesla;https://www.techpowerup.com/gpu-specs/tesla-v100-sxm3-32-gb.c3472;
-TPU v3;08.05.2018;2018.35;HBM2;900;;123000;BF16;https://de.wikipedia.org/wiki/Tensor_Processing_Unit;;https://docs.cloud.google.com/tpu/docs/v3
-Radeon  Instinct MI60;18.11.2018;2018.88;HBM2;1020;14760;29500;FP16;https://en.wikipedia.org/wiki/AMD_Instinct;https://www.techpowerup.com/gpu-specs/radeon-instinct-mi60.c3233;https://www.amd.com/en/support/downloads/drivers.html/accelerators/instinct/instinct-mi-series/instinct-mi60.html
-A100 SXM4 40 GB;14.05.2020;2020.37;HBM2e;1560;19490;311840;FP16;https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A100;https://www.techpowerup.com/gpu-specs/a100-sxm4-40-gb.c3506;
-Radeon Instinct MI100;16.11.2020;2020.87;HBM2;1230;23070;184600;FP16;https://en.wikipedia.org/wiki/AMD_Instinct;https://www.techpowerup.com/gpu-specs/radeon-instinct-mi100.c3496;https://www.amd.com/en/products/accelerators/instinct/mi100.html
-A100 SXM4 80 GB;16.11.2020;2020.87;HBM2e;2039;19490;624000;FP16/BFLOAT16+Sparsity;https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A101;https://www.techpowerup.com/gpu-specs/a100-sxm4-80-gb.c3746;https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-nvidia-us-2188504-web.pdf
-TPU v4;18.05.2021;2021.38;HBM2e;1200;;275000;BF16;https://de.wikipedia.org/wiki/Tensor_Processing_Unit;;https://docs.cloud.google.com/tpu/docs/v4
-Trainium (Trn1);01.12.2021;2021.92;HBM2e;820;47500;190000;FP8/FP16/BF16/TF32;;;https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/trainium.html
-L40S;13.10.2022;2022.78;GDDR6;864;91600;1466000;FP8+Sparsity;;https://www.techpowerup.com/gpu-specs/l40s.c4173;https://www.nvidia.com/de-de/data-center/l40s/
-Inferentia2 (Inf2);30.11.2022;2022.91;HBM2e;820;47500;190000;FP8/FP16/BF16/TF32;;;https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/inf2-arch.html
-H100 SXM5 96 GB;21.03.2023;2023.22;HBM3;3360;66910;3958000;FP8+Sparsity;https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A102;https://www.techpowerup.com/gpu-specs/h100-sxm5-96-gb.c3974;https://resources.nvidia.com/en-us-gpu-resources/h100-datasheet-24306
-TPU v5p;06.12.2023;2023.93;HBM3;2765;;459000;BF16;;;https://docs.cloud.google.com/tpu/docs/v5p
-Radeon Instinct MI300X;06.12.2023;2023.93;HBM3;5300;163400;5229800;FP8+Sparsity;https://en.wikipedia.org/wiki/AMD_Instinct;https://www.techpowerup.com/gpu-specs/radeon-instinct-mi300x.c4179;https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/data-sheets/amd-instinct-mi300x-data-sheet.pdf
-H200 SXM 141 GB;18.11.2024;2024.88;HBM3e;4890;66910;3958000;FP8+Sparsity;https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A103;https://www.techpowerup.com/gpu-specs/h200-sxm-141-gb.c4255;https://resources.nvidia.com/en-us-data-center-overview-mc/en-us-data-center-overview/hpc-datasheet-sc23-h200
-Trainium2 (Trn2);02.12.2024;2024.92;HBM3;2900;181000;2563000;FP8/FP16/BF16/TF32+Sparsity;;;https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/trainium2.html#
-PUU v6e (Trillium);11.12.2024;2024.94;HBM3;1600;;918000;BF16;;;https://docs.cloud.google.com/tpu/docs/v6e?hl=de
-TPU v7 (Ironwood);09.04.2025;2025.27;HBM3e;7380;;4614000;FP8/BF16;;;https://docs.cloud.google.com/tpu/docs/tpu7x
-Radeon Instinct MI325X;10.10.2025;2025.77;HBM3e;6000;163400;5229800;FP8+Sparsity;https://en.wikipedia.org/wiki/AMD_Instinct;https://www.techpowerup.com/gpu-specs/radeon-instinct-mi325x.c4231;https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/product-briefs/instinct-mi325x-datasheet.pdf
-Radeon Instinct MI355X;13.06.2025;2025.45;HBM3e;8000;157300;10066300;MXFP6/MXFP4;https://en.wikipedia.org/wiki/AMD_Instinct;https://www.techpowerup.com/gpu-specs/radeon-instinct-mi355x.c4309;https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/product-briefs/amd-instinct-mi355x-gpu-brochure.pdf
+﻿name,date_de,date_num,mem_type,mem_bw_GBs,fp32_peak_compute_Gflops,ai_dtype_peak_compute_Gflops,dtype,wikipedia,techpowerup,vendor
+Tesla C870,02.05.2007,2007.33,GDDR3,76.8,345.6,345.6,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-c870.c1542,
+FireStream 9170,08.11.2007,2007.85,GDDR3,51.33,497.3,497.3,FP32,https://en.wikipedia.org/wiki/AMD_FireStream,https://www.techpowerup.com/gpu-specs/firestream-9170.c839,
+FireStream 9270,13.11.2008,2008.87,GDDR5,115.2,1200,1200,FP32,https://en.wikipedia.org/wiki/AMD_FireStream,https://www.techpowerup.com/gpu-specs/firestream-9270.c840,
+Tesla C1060,09.04.2009,2009.27,GDDR3,102.4,622.1,622.1,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-c1060.c1539,
+FireStream 9370,23.06.2010,2010.47,GDDR5,147.2,2640,2640,FP32,https://en.wikipedia.org/wiki/AMD_FireStream,https://www.techpowerup.com/gpu-specs/firestream-9370.c1185,
+Tesla M2090,25.06.2011,2011.48,GDDR5,177.4,1332.2,1332.2,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-m2090.c1537,
+Tesla K10,01.05.2012,2012.33,GDDR5,160,2289,2289,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-k10.c918,
+FirePro S9000,24.08.2012,2012.64,GDDR5,264,3226,3226,FP32,https://en.wikipedia.org/wiki/AMD_FirePro,https://www.techpowerup.com/gpu-specs/firepro-s9000.c1879,
+Tesla K20X,12.11.2012,2012.86,GDDR5,249.6,3935,3935,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-k20x.c2315,
+Tesla K40,22.11.2013,2013.89,GDDR5,288.4,5046,5046,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-k40t.c3403,
+FirePro S9150,07.08.2014,2014.6,GDDR5,320,5069,5069,FP32,https://en.wikipedia.org/wiki/AMD_FirePro,https://www.techpowerup.com/gpu-specs/firepro-s9150.c2608,
+FirePro S9170,08.07.2015,2015.52,GDDR5,320,5238,5238,FP32,https://en.wikipedia.org/wiki/AMD_FirePro,https://www.techpowerup.com/gpu-specs/firepro-s9170.c2744,
+Tesla M60,30.08.2015,2015.66,GDDR5,160.4,4825,4825,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-m60.c2760,
+Tesla M40,10.11.2015,2015.86,GDDR5,288.4,6832,6832,FP32,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-m40.c2771,
+Tesla P100 SXM2,05.04.2016,2016.26,HBM2,732.2,10610,21220,FP16,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-p100-sxm2.c3183,
+TPU v2,01.05.2017,2017.33,HBM2,600,,23000,BF16,https://de.wikipedia.org/wiki/Tensor_Processing_Unit,,
+Tesla V100 SXM3 32 GB,27.03.2018,2018.23,HBM2,981,16350,32710,FP16,https://de.wikipedia.org/wiki/Nvidia_Tesla,https://www.techpowerup.com/gpu-specs/tesla-v100-sxm3-32-gb.c3472,
+TPU v3,08.05.2018,2018.35,HBM2,900,,123000,BF16,https://de.wikipedia.org/wiki/Tensor_Processing_Unit,,https://docs.cloud.google.com/tpu/docs/v3
+Radeon  Instinct MI60,18.11.2018,2018.88,HBM2,1020,14760,29500,FP16,https://en.wikipedia.org/wiki/AMD_Instinct,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi60.c3233,https://www.amd.com/en/support/downloads/drivers.html/accelerators/instinct/instinct-mi-series/instinct-mi60.html
+A100 SXM4 40 GB,14.05.2020,2020.37,HBM2e,1560,19490,311840,FP16,https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A100,https://www.techpowerup.com/gpu-specs/a100-sxm4-40-gb.c3506,
+Radeon Instinct MI100,16.11.2020,2020.87,HBM2,1230,23070,184600,FP16,https://en.wikipedia.org/wiki/AMD_Instinct,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi100.c3496,https://www.amd.com/en/products/accelerators/instinct/mi100.html
+A100 SXM4 80 GB,16.11.2020,2020.87,HBM2e,2039,19490,624000,FP16/BFLOAT16+Sparsity,https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A101,https://www.techpowerup.com/gpu-specs/a100-sxm4-80-gb.c3746,https://www.nvidia.com/content/dam/en-zz/Solutions/Data-Center/a100/pdf/nvidia-a100-datasheet-nvidia-us-2188504-web.pdf
+TPU v4,18.05.2021,2021.38,HBM2e,1200,,275000,BF16,https://de.wikipedia.org/wiki/Tensor_Processing_Unit,,https://docs.cloud.google.com/tpu/docs/v4
+Trainium (Trn1),01.12.2021,2021.92,HBM2e,820,47500,190000,FP8/FP16/BF16/TF32,,,https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/trainium.html
+L40S,13.10.2022,2022.78,GDDR6,864,91600,1466000,FP8+Sparsity,,https://www.techpowerup.com/gpu-specs/l40s.c4173,https://www.nvidia.com/de-de/data-center/l40s/
+Inferentia2 (Inf2),30.11.2022,2022.91,HBM2e,820,47500,190000,FP8/FP16/BF16/TF32,,,https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/inf2-arch.html
+H100 SXM5 96 GB,21.03.2023,2023.22,HBM3,3360,66910,3958000,FP8+Sparsity,https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A102,https://www.techpowerup.com/gpu-specs/h100-sxm5-96-gb.c3974,https://resources.nvidia.com/en-us-gpu-resources/h100-datasheet-24306
+TPU v5p,06.12.2023,2023.93,HBM3,2765,,459000,BF16,,,https://docs.cloud.google.com/tpu/docs/v5p
+Radeon Instinct MI300X,06.12.2023,2023.93,HBM3,5300,163400,5229800,FP8+Sparsity,https://en.wikipedia.org/wiki/AMD_Instinct,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi300x.c4179,https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/data-sheets/amd-instinct-mi300x-data-sheet.pdf
+H200 SXM 141 GB,18.11.2024,2024.88,HBM3e,4890,66910,3958000,FP8+Sparsity,https://en.wikipedia.org/wiki/Ampere_(microarchitecture)#A100_accelerator_and_DGX_A103,https://www.techpowerup.com/gpu-specs/h200-sxm-141-gb.c4255,https://resources.nvidia.com/en-us-data-center-overview-mc/en-us-data-center-overview/hpc-datasheet-sc23-h200
+Trainium2 (Trn2),02.12.2024,2024.92,HBM3,2900,181000,2563000,FP8/FP16/BF16/TF32+Sparsity,,,https://awsdocs-neuron.readthedocs-hosted.com/en/latest/about-neuron/arch/neuron-hardware/trainium2.html#
+PUU v6e (Trillium),11.12.2024,2024.94,HBM3,1600,,918000,BF16,,,https://docs.cloud.google.com/tpu/docs/v6e?hl=de
+TPU v7 (Ironwood),09.04.2025,2025.27,HBM3e,7380,,4614000,FP8/BF16,,,https://docs.cloud.google.com/tpu/docs/tpu7x
+Radeon Instinct MI325X,10.10.2025,2025.77,HBM3e,6000,163400,5229800,FP8+Sparsity,https://en.wikipedia.org/wiki/AMD_Instinct,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi325x.c4231,https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/product-briefs/instinct-mi325x-datasheet.pdf
+Radeon Instinct MI355X,13.06.2025,2025.45,HBM3e,8000,157300,10066300,MXFP6/MXFP4,https://en.wikipedia.org/wiki/AMD_Instinct,https://www.techpowerup.com/gpu-specs/radeon-instinct-mi355x.c4309,https://www.amd.com/content/dam/amd/en/documents/instinct-tech-docs/product-briefs/amd-instinct-mi355x-gpu-brochure.pdf

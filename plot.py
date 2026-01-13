@@ -41,6 +41,7 @@ class RegressionLine:
     A: float    # A
     b: float    # exponent
     ten_p20b: float    # 10^(20*b)
+    ten_p2b: float    # 10^(2*b)
 
 
 # Sorts DataFrame by 'date_num' column in ascending order.
@@ -75,7 +76,9 @@ def calulate_regression_lines(df: pd.DataFrame,
         x = df.loc[mask, x_col].to_numpy(dtype=float)
         y = df.loc[mask, log10_col_name].to_numpy(dtype=float)
         b, logA = np.polyfit(x, y, deg=1)
-        regression_lines[y_col] = RegressionLine(logA=logA, A=10**logA, b=b, ten_p20b=10**(20 * b))
+        regression_lines[y_col] = RegressionLine(
+            logA=logA, A=10**logA, b=b, ten_p20b=10**(20 * b), ten_p2b=10**(2 * b)
+        )
 
     return regression_lines
 
@@ -114,16 +117,18 @@ def plot(df: pd.DataFrame, regression_lines: dict[str, RegressionLine], settings
         A = reg_line.A
         b = reg_line.b
         y_model = A * 10**(b * (df['date_num'] - 2000))
+        label = fr"{int(reg_line.ten_p20b):d}$\times$/20 years ({reg_line.ten_p2b:.1f}$\times$/2 years)"
         plt.plot(
             df["date_pd"],
             y_model,
             linestyle="--",
             linewidth=settings.regression_line_width,
-            color=marker_color
+            color=marker_color,
+            label=label
         )
 
     plt.xlabel("Year", fontsize=settings.label_fontsize)
-    plt.ylabel("Normalized value", fontsize=settings.label_fontsize)
+    plt.ylabel("Normalized Scaling", fontsize=settings.label_fontsize)
     plt.tick_params(axis="both", which="major", labelsize=settings.tick_fontsize)
     plt.title("Development of Peak Compute vs. Memory Bandwidth", fontsize=settings.title_fontsize)
     plt.legend(fontsize=settings.legend_fontsize)
@@ -150,9 +155,9 @@ if __name__ == '__main__':
             "norm_ai_dtype_peak_compute_Gflops",
         ],
         y_label=[
-            "Normalized Memory Bandwidth (GB/s)",
-            "Normalized FP32 Peak Compute (GFLOPS)",
-            "Normalized Peak Compute (GFLOPS)",
+            "Memory Bandwidth (GB/s)",
+            "FP32 Peak Compute (GFLOPS)",
+            "Peak Compute (GFLOPS)",
         ],
         marker_color=["firebrick", "royalblue", "mediumseagreen"],
         label_fontsize=14,
@@ -161,8 +166,7 @@ if __name__ == '__main__':
         legend_fontsize=14
     )
 
-    df = pd.read_csv(settings.dc_chips_path, sep=";", header=0, decimal=".", encoding="utf-8")
-
+    df = pd.read_csv(settings.dc_chips_path, sep=",", header=0, decimal=".", encoding="utf-8")
     df = preprocess_date(df, settings)
     regression_lines = calulate_regression_lines(df, settings)
     plot(df, regression_lines, settings)
