@@ -12,6 +12,7 @@ from src.regression import *
 from src.settings import *
 from src.preprocess import *
 from src.plot import plot
+from src.pgfplot import pgfplot
 
 
 def run_plot(settings: PltSettings) -> None:
@@ -19,6 +20,7 @@ def run_plot(settings: PltSettings) -> None:
     df = preprocess_data(df, settings)
     regression_lines = calulate_regression_lines(df, settings)
     plot(df, regression_lines, settings)
+    pgfplot(df, regression_lines, settings)
 
 
 if __name__ == "__main__":
