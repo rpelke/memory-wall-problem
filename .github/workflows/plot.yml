@@ -31,13 +31,15 @@ jobs:
 
       - name: Publish PNG to gh-pages
         run: |
+          mkdir /tmp/gh-pages
+          cp *.png *.tex /tmp/gh-pages/
           git switch --orphan gh-pages
-          git rm -rf . || true
+          rm -rf ./*
+          mv /tmp/gh-pages/* .
 
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          echo "__pycache__" > .gitignore
           git add .
           git commit -m "Update plots" || echo "No changes to commit"
           git push -f origin gh-pages
