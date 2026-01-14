@@ -29,6 +29,7 @@ class PltSettings:
         text_offsets (float): Offsets for text annotations in percentage.
         ylim (tuple[float, float]): Y-axis limits.
         title (str): Title of the plot.
+        mem_bw_label_type (str): Type of label for memory bandwidth data ("name" or "mem_type").
     """
     dc_chips_path: Path
     output_name: str
@@ -47,6 +48,7 @@ class PltSettings:
     text_offsets: float = 0.15
     ylim: tuple[float, float] = None
     title: str = None
+    mem_bw_label_type: str = "name"
 
     # Verify that all lists have the same length.
     def __post_init__(self):
@@ -59,3 +61,24 @@ class PltSettings:
                 "All list fields must have the same length. "
                 f"Got lengths: {lengths}"
             )
+        if self.mem_bw_label_type not in ["name", "mem_type"]:
+            raise ValueError(
+                'mem_bw_label_type must be either "name" or "mem_type". '
+                f'Got: {self.mem_bw_label_type}'
+            )
+
+    def get_label_cols(self, raw_data_col: str) -> tuple[str, str]:
+        """Get the label column information based on raw_data_col and mem_bw_label_type.
+
+        Args:
+            raw_data_col (str): The raw data column name.
+
+        Returns:
+            tuple[str, str]: A tuple containing
+            * The name of the column that contains the label position
+            * The name of the column that contains the label text
+        """
+        if raw_data_col == "mem_bw_GBs" and self.mem_bw_label_type == "mem_type":
+            return "mem_type_labels", "mem_type"
+        else:
+            return f"{raw_data_col}_labels", "name"
