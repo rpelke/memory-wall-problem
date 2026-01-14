@@ -15,7 +15,7 @@ src_dirs = [f"{proj_dir}"]
 exclude = [f"{proj_dir}/.venv", "__init__.py", f"{proj_dir}/cpp"]
 
 files = [
-    f for d in src_dirs for f in Path(d).rglob('*')
+    f for d in src_dirs for f in Path(d).rglob("*")
     if f.is_file() and f.suffix == ".py" and all(xcl not in f._str for xcl in exclude)
 ]
 for f in files:

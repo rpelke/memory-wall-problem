@@ -77,7 +77,7 @@ def plot(
     for (y_col, reg_line), marker_color in zip(regression_lines.items(), settings.marker_color):
         A = reg_line.A
         b = reg_line.b
-        y_model = A * 10**(b * (df['date_num'] - 2000))
+        y_model = A * 10**(b * (df["date_num"] - 2000))
         label = fr"{int(reg_line.factor_20y):d}$\times$/20 years ({reg_line.factor_2y:.1f}$\times$/2 years)"
         plt.plot(
             df["date_pd"],

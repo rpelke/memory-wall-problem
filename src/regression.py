@@ -55,7 +55,7 @@ def calulate_regression_lines(df: pd.DataFrame, settings: PltSettings) -> dict[s
     """
     # Shift date by 2000 for better numerical stability.
     x_col = "date_num_minus2000"
-    df[x_col] = df['date_num'] - 2000
+    df[x_col] = df["date_num"] - 2000
 
     regression_lines = {}
 
