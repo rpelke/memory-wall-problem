@@ -45,21 +45,21 @@ if __name__ == "__main__":
         replace(
             base,
             output_name="memory_wall_problem_fp32.png",
-            raw_data_col=["mem_bw_GBs", "fp32_peak_compute_Gflops"],
-            marker=["D", "o"],
-            y_col=["norm_mem_bw_GBs", "norm_fp32_peak_compute_Gflops"],
-            y_label=["Memory Bandwidth (GB/s)", "FP32 Peak Compute (GFLOPS)"],
-            marker_color=["mediumseagreen", "royalblue"],
+            raw_data_col=["fp32_peak_compute_Gflops", "mem_bw_GBs"],
+            marker=["o", "D"],
+            y_col=["norm_fp32_peak_compute_Gflops", "norm_mem_bw_GBs"],
+            y_label=["FP32 Peak Compute (GFLOPS)", "Memory Bandwidth (GB/s)"],
+            marker_color=["royalblue", "mediumseagreen"],
             title="Development of Peak Compute (only FP32) vs. Memory Bandwidth"
         ),
         replace(
             base,
             output_name="memory_wall_problem.png",
-            raw_data_col=["mem_bw_GBs", "ai_dtype_peak_compute_Gflops"],
-            marker=["D", "v"],
-            y_col=["norm_mem_bw_GBs", "norm_ai_dtype_peak_compute_Gflops"],
-            y_label=["Memory Bandwidth (GB/s)", "Peak Compute (GFLOPS)"],
-            marker_color=["mediumseagreen", "mediumpurple"],
+            raw_data_col=["ai_dtype_peak_compute_Gflops", "mem_bw_GBs"],
+            marker=["v", "D"],
+            y_col=["norm_ai_dtype_peak_compute_Gflops", "norm_mem_bw_GBs"],
+            y_label=["Peak Compute (GFLOPS)", "Memory Bandwidth (GB/s)"],
+            marker_color=["mediumpurple", "mediumseagreen"],
             title="Development of Peak Compute vs. Memory Bandwidth"
         ),
     ]
