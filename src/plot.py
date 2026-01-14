@@ -41,36 +41,39 @@ def plot(
 
         def _plot_point_labels():
             """Plot optional point labels if available in the DataFrame."""
-            label_col = f"{d_col}_labels"
 
-            if label_col in df.columns:
-                label_pos = df.loc[mask, label_col]
-                label_name = df.loc[mask, "name"]
-                l_x = df.loc[mask, "date_pd"]
-                l_y = df.loc[mask, y_col]
+            label_pos_col, label_text_col = settings.get_label_cols(d_col)
+            label_col = df.loc[mask, label_text_col]
 
-                for xi, yi, l_pos, l_name in zip(l_x, l_y, label_pos, label_name):
-                    if pd.isna(l_pos):
-                        continue
+            assert label_pos_col in df.columns, f"Column '{label_pos_col}' not found in DataFrame."
 
-                    yi_text = yi * (1 + settings.text_offsets
-                                   ) if l_pos == "t" else yi * (1 - settings.text_offsets)
-                    plt.annotate(
-                        l_name, (xi, yi),
-                        xytext=(xi, yi_text),
-                        textcoords="data",
-                        ha="center",
-                        va="bottom" if l_pos == "t" else "top",
-                        fontsize=settings.annotation_fontsize,
-                        color=marker_color,
-                        bbox=dict(
-                            boxstyle="round,pad=0.05",
-                            facecolor="white",
-                            edgecolor="black",
-                            linewidth=0.3,
-                            alpha=1.0,
-                        )
+            label_pos = df.loc[mask, label_pos_col]
+
+            l_x = df.loc[mask, "date_pd"]
+            l_y = df.loc[mask, y_col]
+
+            for xi, yi, l_pos, l_name in zip(l_x, l_y, label_pos, label_col):
+                if pd.isna(l_pos):
+                    continue
+
+                yi_text = yi * (1 + settings.text_offsets
+                               ) if l_pos == "t" else yi * (1 - settings.text_offsets)
+                plt.annotate(
+                    l_name, (xi, yi),
+                    xytext=(xi, yi_text),
+                    textcoords="data",
+                    ha="center",
+                    va="bottom" if l_pos == "t" else "top",
+                    fontsize=settings.annotation_fontsize,
+                    color=marker_color,
+                    bbox=dict(
+                        boxstyle="round,pad=0.05",
+                        facecolor="white",
+                        edgecolor="black",
+                        linewidth=0.3,
+                        alpha=1.0,
                     )
+                )
 
         _plot_point_labels()
 

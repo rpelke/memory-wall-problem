@@ -38,7 +38,8 @@ if __name__ == "__main__":
         legend_fontsize=14,
         annotation_fontsize=10,
         ylim=(5 * 10e-2, 3.5 * 10e3),
-        text_offsets=0.1
+        text_offsets=0.1,
+        mem_bw_label_type="mem_type"
     )
 
     configs = [
@@ -61,7 +62,7 @@ if __name__ == "__main__":
             y_label=["Peak Compute (GFLOPS)", "Memory Bandwidth (GB/s)"],
             marker_color=["mediumpurple", "mediumseagreen"],
             title="Development of Peak Compute vs. Memory Bandwidth"
-        ),
+        )
     ]
 
     for cfg in configs:

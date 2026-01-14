@@ -148,16 +148,15 @@ def pgfplot(
 
         outfile.append((indent, "% Data labels"))
 
-        label_col = label_cols.get(y_col, "name")
+        label_pos_col, label_text_col = settings.get_label_cols(raw_data_col)
         for _, row in df.iterrows():
-            label_pos_col = f"{raw_data_col}_labels"
             if label_pos_col not in row or pd.isna(row[label_pos_col]) or pd.isna(row[y_col]):
                 continue
 
             outfile.append(
                 (
                     indent,
-                    rf"\node[anchor={anchor_dict.get(row[label_pos_col], 'south')}, font=\tiny] at (axis cs:{row['date_num']}, {row[y_col]}) {{{row[label_col]}}};"
+                    rf"\node[anchor={anchor_dict.get(row[label_pos_col], 'south')}, font=\tiny] at (axis cs:{row['date_num']}, {row[y_col]}) {{{row[label_text_col]}}};"
                 )
             )
         outfile.append((0, ""))
