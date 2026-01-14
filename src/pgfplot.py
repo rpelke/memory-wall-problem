@@ -90,7 +90,7 @@ def pgfplot(
         settings.marker_color
     ):
         # yapf: disable
-        outfile.append((indent, rf"% {"-" * 10} {y_label}"))
+        outfile.append((indent, rf"% {'-' * 10} {y_label}"))
         # yapf: enable
 
         outfile.append((indent, r"\addplot ["))
