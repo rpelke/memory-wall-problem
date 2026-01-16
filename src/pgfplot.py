@@ -48,10 +48,19 @@ def pgfplot(
     outfile.append((indent, r"\begin{tikzpicture}"))
     indent += 1
 
+    outfile.append(
+        (
+            indent,
+            r"\tikzstyle{lbl} = [font=\tiny, outer sep=1pt, fill=white, draw=black, inner sep=1pt, rounded corners=1pt]"
+        )
+    )
+
     outfile.append((indent, r"\begin{axis}["))
     indent += 1
 
     axis_properties = {
+        "set layers":
+            None,
         "width":
             "15.4cm",
         "height":
@@ -64,6 +73,14 @@ def pgfplot(
             "log",
         "log basis y":
             "10",
+        "ymin":
+            str(settings.ylim[0]),
+        "ymax":
+            str(settings.ylim[1]),
+        "xmin":
+            math.floor(df.loc[df[settings.y_col].notna().any(axis=1)]["date_num"].min()) - 1,
+        "xmax":
+            math.ceil(df.loc[df[settings.y_col].notna().any(axis=1)]["date_num"].max()) + 1,
         "grid":
             "major",
         "minor grid style":
@@ -148,6 +165,9 @@ def pgfplot(
 
         outfile.append((indent, "% Data labels"))
 
+        outfile.append((indent, r"\begin{pgfonlayer}{axis descriptions}"))
+        indent += 1
+
         label_pos_col, label_text_col = settings.get_label_cols(raw_data_col)
         for _, row in df.iterrows():
             if label_pos_col not in row or pd.isna(row[label_pos_col]) or pd.isna(row[y_col]):
@@ -156,9 +176,11 @@ def pgfplot(
             outfile.append(
                 (
                     indent,
-                    rf"\node[anchor={anchor_dict.get(row[label_pos_col], 'south')}, font=\tiny] at (axis cs:{row['date_num']}, {row[y_col]}) {{{row[label_text_col]}}};"
+                    rf"\node[lbl, anchor={anchor_dict.get(row[label_pos_col], 'south')}] at (axis cs:{row['date_num']}, {row[y_col]}) {{{row[label_text_col]}}};"
                 )
             )
+        indent -= 1
+        outfile.append((indent, r"\end{pgfonlayer}"))
         outfile.append((0, ""))
 
     indent -= 1
