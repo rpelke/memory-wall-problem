@@ -37,7 +37,7 @@ if __name__ == "__main__":
         title_fontsize=14,
         legend_fontsize=14,
         annotation_fontsize=10,
-        ylim=(5 * 10e-2, 3.5 * 10e3),
+        ylim=(5 * 10e-2, 5.0 * 10e3),
         text_offsets=0.1,
         mem_bw_label_type="mem_type"
     )
