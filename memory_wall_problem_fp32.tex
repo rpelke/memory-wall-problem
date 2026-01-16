@@ -1,0 +1,178 @@
+% \usepackage{tikz}
+% \usepackage{pgfplots}
+% \pgfplotsset{compat=1.14}
+
+\begin{figure}
+    \centering
+    \begin{tikzpicture}
+        \tikzstyle{lbl} = [font=\tiny, outer sep=1pt, fill=white, draw=black, inner sep=1pt, rounded corners=1pt]
+        \begin{axis}[
+            set layers,
+            width=15.4cm,
+            height=7cm,
+            xlabel={Year},
+            ylabel={Normalized Scaling},
+            ymode=log,
+            log basis y=10,
+            ymin=0.5,
+            ymax=50000.0,
+            xmin=2006,
+            xmax=2027,
+            grid=major,
+            minor grid style=dotted,
+            scaled x ticks=false,
+            xticklabel style={/pgf/number format/fixed, /pgf/number format/precision=0, /pgf/number format/1000 sep={}},
+            legend pos=north west,
+            legend cell align=left,
+            legend style={font=\scriptsize},
+        ]
+            % ---------- FP32 Peak Compute (GFLOPS)
+            \addplot [
+                only marks,
+                mark=*,
+                draw=none,
+                fill=gray!75,
+            ] coordinates {
+                (2007.33, 1.0)
+                (2007.85, 1.4389467592592593)
+                (2008.87, 3.472222222222222)
+                (2009.27, 1.8000578703703702)
+                (2010.47, 7.638888888888888)
+                (2011.48, 3.8547453703703702)
+                (2012.33, 6.623263888888888)
+                (2012.64, 9.33449074074074)
+                (2012.86, 11.38599537037037)
+                (2013.89, 14.600694444444443)
+                (2014.6, 14.66724537037037)
+                (2015.52, 15.156249999999998)
+                (2015.66, 13.961226851851851)
+                (2015.86, 19.768518518518515)
+                (2016.26, 30.70023148148148)
+                (2018.23, 47.30902777777777)
+                (2018.88, 42.70833333333333)
+                (2020.37, 56.394675925925924)
+                (2020.87, 66.75347222222221)
+                (2020.87, 56.394675925925924)
+                (2021.92, 137.44212962962962)
+                (2022.78, 265.0462962962963)
+                (2022.91, 137.44212962962962)
+                (2023.22, 193.60532407407405)
+                (2023.93, 472.80092592592587)
+                (2024.88, 193.60532407407405)
+                (2024.92, 523.7268518518518)
+                (2025.45, 455.15046296296293)
+                (2025.77, 472.80092592592587)
+            };
+            \addlegendentry{FP32 Peak Compute (GFLOPS)}
+
+            % Regression line
+            \addplot [
+                densely dotted,
+                domain=2007:2026,
+                samples=200,
+            ] { 0.14803558865213998 * 10^(0.1348329689072497 * (x - 2000))};
+            \addlegendentry{497\,$\times$/20\,yrs (1.9\,$\times$/2\,yrs)}
+
+            % Data labels
+            \begin{pgfonlayer}{axis descriptions}
+                \node[lbl, anchor=south] at (axis cs:2007.33, 1.0) {C870};
+                \node[lbl, anchor=south] at (axis cs:2007.85, 1.4389467592592593) {FS 9170};
+                \node[lbl, anchor=south] at (axis cs:2008.87, 3.472222222222222) {FS 9270};
+                \node[lbl, anchor=south] at (axis cs:2009.27, 1.8000578703703702) {C1060};
+                \node[lbl, anchor=south] at (axis cs:2010.47, 7.638888888888888) {FS 9370};
+                \node[lbl, anchor=south] at (axis cs:2011.48, 3.8547453703703702) {M2090};
+                \node[lbl, anchor=north] at (axis cs:2012.33, 6.623263888888888) {K10};
+                \node[lbl, anchor=north] at (axis cs:2012.64, 9.33449074074074) {FP S9000};
+                \node[lbl, anchor=south] at (axis cs:2012.86, 11.38599537037037) {K20X};
+                \node[lbl, anchor=south] at (axis cs:2013.89, 14.600694444444443) {K40};
+                \node[lbl, anchor=north] at (axis cs:2014.6, 14.66724537037037) {FP S9150};
+                \node[lbl, anchor=south] at (axis cs:2015.52, 15.156249999999998) {FP S9170};
+                \node[lbl, anchor=north] at (axis cs:2015.66, 13.961226851851851) {M60};
+                \node[lbl, anchor=south] at (axis cs:2015.86, 19.768518518518515) {M40};
+                \node[lbl, anchor=south] at (axis cs:2016.26, 30.70023148148148) {P100};
+                \node[lbl, anchor=south] at (axis cs:2018.23, 47.30902777777777) {V100};
+                \node[lbl, anchor=north] at (axis cs:2018.88, 42.70833333333333) {MI60};
+                \node[lbl, anchor=south] at (axis cs:2020.87, 66.75347222222221) {MI100};
+                \node[lbl, anchor=north] at (axis cs:2020.87, 56.394675925925924) {A100 80GB};
+                \node[lbl, anchor=south] at (axis cs:2021.92, 137.44212962962962) {Trn1};
+                \node[lbl, anchor=south] at (axis cs:2022.78, 265.0462962962963) {L40S};
+                \node[lbl, anchor=south] at (axis cs:2022.91, 137.44212962962962) {Inf2};
+                \node[lbl, anchor=south] at (axis cs:2023.22, 193.60532407407405) {H100 96GB};
+                \node[lbl, anchor=south] at (axis cs:2023.93, 472.80092592592587) {MI300X};
+                \node[lbl, anchor=south] at (axis cs:2024.88, 193.60532407407405) {H200};
+                \node[lbl, anchor=south] at (axis cs:2024.92, 523.7268518518518) {Trn2};
+                \node[lbl, anchor=north] at (axis cs:2025.45, 455.15046296296293) {MI355X};
+                \node[lbl, anchor=south] at (axis cs:2025.77, 472.80092592592587) {MI325X};
+            \end{pgfonlayer}
+
+            % ---------- Memory Bandwidth (GB/s)
+            \addplot [
+                only marks,
+                mark=diamond*,
+                draw=none,
+                fill=gray!75,
+            ] coordinates {
+                (2007.33, 1.0)
+                (2007.85, 0.668359375)
+                (2008.87, 1.5)
+                (2009.27, 1.3333333333333335)
+                (2010.47, 1.9166666666666665)
+                (2011.48, 2.3098958333333335)
+                (2012.33, 2.0833333333333335)
+                (2012.64, 3.4375)
+                (2012.86, 3.25)
+                (2013.89, 3.755208333333333)
+                (2014.6, 4.166666666666667)
+                (2015.52, 4.166666666666667)
+                (2015.66, 2.088541666666667)
+                (2015.86, 3.755208333333333)
+                (2016.26, 9.533854166666668)
+                (2017.33, 7.8125)
+                (2018.23, 12.7734375)
+                (2018.35, 11.71875)
+                (2018.88, 13.28125)
+                (2020.37, 20.3125)
+                (2020.87, 16.015625)
+                (2020.87, 26.549479166666668)
+                (2021.38, 15.625)
+                (2021.92, 10.677083333333334)
+                (2022.78, 11.25)
+                (2022.91, 10.677083333333334)
+                (2023.22, 43.75)
+                (2023.93, 36.00260416666667)
+                (2023.93, 69.01041666666667)
+                (2024.88, 63.671875)
+                (2024.92, 37.76041666666667)
+                (2024.94, 20.833333333333336)
+                (2025.27, 96.09375)
+                (2025.45, 104.16666666666667)
+                (2025.77, 78.125)
+            };
+            \addlegendentry{Memory Bandwidth (GB/s)}
+
+            % Regression line
+            \addplot [
+                densely dashed,
+                domain=2007:2026,
+                samples=200,
+            ] { 0.14676174382859433 * 10^(0.0999131879159643 * (x - 2000))};
+            \addlegendentry{100\,$\times$/20\,yrs (1.6\,$\times$/2\,yrs)}
+
+            % Data labels
+            \begin{pgfonlayer}{axis descriptions}
+                \node[lbl, anchor=north] at (axis cs:2007.33, 1.0) {GDDR3};
+                \node[lbl, anchor=north] at (axis cs:2008.87, 1.5) {GDDR5};
+                \node[lbl, anchor=north] at (axis cs:2012.64, 3.4375) {GDDR5};
+                \node[lbl, anchor=north] at (axis cs:2016.26, 9.533854166666668) {HBM2};
+                \node[lbl, anchor=south] at (axis cs:2020.37, 20.3125) {HBM2e};
+                \node[lbl, anchor=south] at (axis cs:2022.78, 11.25) {GDDR6};
+                \node[lbl, anchor=south] at (axis cs:2023.22, 43.75) {HBM3};
+                \node[lbl, anchor=south] at (axis cs:2024.88, 63.671875) {HBM3e};
+            \end{pgfonlayer}
+
+        \end{axis}
+    \end{tikzpicture}
+
+    \caption{Development of Peak Compute (only FP32) vs. Memory Bandwidth}
+    \label{fig:memory_wall_problem_fp32}
+\end{figure}
